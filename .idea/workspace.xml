@@ -4,16 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="786b9761-3d71-412b-80c0-a99febc96916" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/sps/xml/annotation/XmlAttribute.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/sps/xml/annotation/XmlElementWrapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/sps/xml/annotation/XmlRootElement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/sps/xml/annotation/XmlValue.java" afterDir="false" />
+    <list default="true" id="786b9761-3d71-412b-80c0-a99febc96916" name="Changes" comment="Added annotations">
+      <change afterPath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlTreeBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/sps/xml/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/Xml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/Xml.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/annotation/XmlAttribute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/annotation/XmlAttribute.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/sps/xml/annotation/XmlElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/annotation/XmlElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/annotation/XmlElementWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/annotation/XmlElementWrapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/annotation/XmlRootElement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/annotation/XmlValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/annotation/XmlValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlParser.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +63,14 @@
       <option name="presentableId" value="Default" />
       <updated>1694847788369</updated>
     </task>
+    <task id="LOCAL-00001" summary="Added annotations">
+      <created>1695171413029</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1695171413029</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -74,5 +83,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added annotations" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added annotations" />
   </component>
 </project>

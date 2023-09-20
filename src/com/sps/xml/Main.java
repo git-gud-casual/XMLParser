@@ -1,19 +1,16 @@
 package com.sps.xml;
 
-import com.sps.xml.annotation.XmlRootElement;
+import com.sps.xml.annotation.XmlElement;
 
-import java.awt.*;
-import java.io.PrintStream;
-import java.io.Serializable;
-import java.lang.annotation.Annotation;
 
 public class Main {
-    @XmlRootElement(name="Main")
-    class XmlRoot {
+    @XmlElement(name = "123")
+    static class XmlRoot {
 
     }
 
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws NoSuchFieldException {
+        XmlElement annotation = XmlRoot.class.getAnnotation(XmlElement.class);
+        System.out.println(annotation);
     }
 }
