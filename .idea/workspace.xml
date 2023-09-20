@@ -5,12 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="786b9761-3d71-412b-80c0-a99febc96916" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/sps/xml/Xml.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/sps/xml/annotation/XmlElement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/sps/xml/annotation/XmlAttribute.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/sps/xml/annotation/XmlElementWrapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/sps/xml/annotation/XmlRootElement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/sps/xml/annotation/XmlValue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/Xml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/Xml.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/annotation/XmlElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/annotation/XmlElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlParser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="AnnotationType" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -37,13 +40,10 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.sps.xml.Main" />
@@ -63,5 +63,16 @@
       <updated>1694847788369</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

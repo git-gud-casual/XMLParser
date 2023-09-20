@@ -6,8 +6,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
 
-@Target(value=ElementType.FIELD)
+@Target(value=ElementType.TYPE)
 @Retention(value=RetentionPolicy.RUNTIME)
-public @interface XmlElement {
+public @interface XmlRootElement {
     String name();
 }
