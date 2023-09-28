@@ -7,17 +7,26 @@ import com.sps.xml.parser.XmlTreeBuilder;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-
-public class Main {
-    @XmlElement(name = "123")
-    static class XmlRoot {
+@XmlElement(name = "123")
+class XmlRoot {
+    @XmlElement(name = "341")
+    public static class XmlChild {
 
     }
+    private XmlChild child;
+}
 
-    public static void main(String[] args) throws NoSuchFieldException, IOException, XmlParseException {
+
+public class Main {
+
+
+    public static void main(String[] args) throws NoSuchFieldException, IOException, XmlParseException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
+        /*
         XmlTreeBuilder builder = new XmlTreeBuilder();
 
         StringBuilder stringBuilder = new StringBuilder();
@@ -25,6 +34,12 @@ public class Main {
             stringBuilder.append(line);
         }
 
-        System.out.println(builder.build(stringBuilder.toString()).toString());
+        System.out.println(builder.build(stringBuilder.toString()).toString());*/
+
+        XmlRoot xmlRoot = new XmlRoot();
+        Field child = xmlRoot.getClass().getDeclaredFields()[0];
+        child.setAccessible(true);
+        child.set(xmlRoot, new XmlRoot.XmlChild());
+        System.out.println(child.get(xmlRoot));
     }
 }

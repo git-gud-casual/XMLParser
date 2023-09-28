@@ -3,4 +3,6 @@
     abcd
     <!-- comment -->
     <child/>
+    <child abc="asdasd"/>
+    mixedcontent
 </a>

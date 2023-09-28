@@ -33,7 +33,7 @@ public class XmlTreeBuilder {
 
                 int newTagBegin = xmlString.indexOf('<');
                 node = nodeStack.peek();
-                node.setValue(node.getValue() + xmlString.substring(0, newTagBegin));
+                node.setValue(node.getValue() + xmlString.substring(0, newTagBegin).trim());
                 xmlString = xmlString.substring(newTagBegin);
             }
             else if (isOpenTag(xmlString)) {

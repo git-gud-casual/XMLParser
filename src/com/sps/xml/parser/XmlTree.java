@@ -5,8 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class XmlTree {
-    static public class XmlNode {
+final public class XmlTree {
+    final static public class XmlNode {
         private XmlNode parent;
 
         private String name;
@@ -97,8 +97,7 @@ public class XmlTree {
             int indent = 0;
             void buildString(XmlNode node) {
                 stringBuilder.append(" ".repeat(indent));
-                stringBuilder.append("<");
-                stringBuilder.append(node.name);
+                stringBuilder.append("<").append(node.getName());
                 for (Map.Entry<String, String> entry : node.attributes.entrySet()) {
                     stringBuilder.append(String.format(" %s=\"%s\"", entry.getKey(), entry.getValue()));
                 }
@@ -110,17 +109,14 @@ public class XmlTree {
                     stringBuilder.append(">\n");
                     indent += 2;
                     stringBuilder.append(" ".repeat(indent));
-                    stringBuilder.append(node.value);
-                    stringBuilder.append('\n');
+                    stringBuilder.append(node.value).append('\n');
                     for (XmlNode child : node.children) {
                         buildString(child);
                         stringBuilder.append('\n');
                     }
                     indent -= 2;
                     stringBuilder.append(" ".repeat(indent));
-                    stringBuilder.append("</");
-                    stringBuilder.append(node.name);
-                    stringBuilder.append(">");
+                    stringBuilder.append(String.format("</%s>", node.getName()));
                 }
             }
         }
