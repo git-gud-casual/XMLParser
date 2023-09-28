@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<a   name="as"  color="green">
+    abcd
+    <!-- comment -->
+    <child/>
+</a>

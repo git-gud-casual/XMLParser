@@ -4,17 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="786b9761-3d71-412b-80c0-a99febc96916" name="Changes" comment="Added annotations">
-      <change afterPath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlTreeBuilder.java" afterDir="false" />
+    <list default="true" id="786b9761-3d71-412b-80c0-a99febc96916" name="Changes" comment="Added XmlTree and XmlTreeBuilder">
+      <change afterPath="$PROJECT_DIR$/src/com/sps/xml/exception/XmlParseException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/sps/xml/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/annotation/XmlAttribute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/annotation/XmlAttribute.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/annotation/XmlElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/annotation/XmlElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/annotation/XmlElementWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/annotation/XmlElementWrapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/annotation/XmlRootElement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/annotation/XmlValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/annotation/XmlValue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/Xml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/Xml.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlTreeBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlTreeBuilder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +33,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
   <component name="ProjectId" id="2VT6aZ2RZgqJrUfyyi8yiTQyb79" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -70,7 +71,14 @@
       <option name="project" value="LOCAL" />
       <updated>1695171413029</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added XmlTree and XmlTreeBuilder">
+      <created>1695176712675</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1695176712675</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -86,6 +94,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added annotations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added annotations" />
+    <MESSAGE value="Added XmlTree and XmlTreeBuilder" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added XmlTree and XmlTreeBuilder" />
   </component>
 </project>
