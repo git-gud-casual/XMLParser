@@ -1,9 +1,6 @@
 package com.sps.xml.parser;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 final public class XmlTree {
     final static public class XmlNode {
@@ -35,10 +32,6 @@ final public class XmlTree {
             this.parent = parent;
         }
 
-        public XmlNode getParent() {
-            return parent;
-        }
-
         public void setName(String name) {
             this.name = name;
         }
@@ -59,6 +52,10 @@ final public class XmlTree {
             attributes.put(name, value);
         }
 
+        public String getAttribute(String name) {
+            return attributes.get(name);
+        }
+
         public int childrenCount() {
             return children.size();
         }
@@ -72,8 +69,12 @@ final public class XmlTree {
             child.parent = this;
         }
 
-        public XmlNode getChild(int index) {
-            return  children.get(index);
+        public Iterator<XmlNode> childrenIterator() {
+            return children.stream().iterator();
+        }
+
+        public List<XmlNode> getChildren() {
+            return new ArrayList<>(children);
         }
     }
 

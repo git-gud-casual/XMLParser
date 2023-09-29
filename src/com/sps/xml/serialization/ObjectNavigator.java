@@ -3,33 +3,30 @@ package com.sps.xml.serialization;
 import com.sps.xml.annotation.XmlAttribute;
 import com.sps.xml.annotation.XmlElement;
 import com.sps.xml.annotation.XmlValue;
+import com.sps.xml.exception.XmlSerializationException;
 
 import java.lang.reflect.Field;
 
 final class ObjectNavigator {
-    public interface Visitor {
-        void start(Object obj);
+    public interface Visitor<T> {
+        void start(T obj);
 
-        void visitAttribute(Field attribute);
+        void visitAttribute(Field attribute) throws XmlSerializationException;
 
-        void visitValue(Field value);
+        void visitValue(Field value) throws XmlSerializationException;
 
-        void visitXmlElement(Field element);
+        void visitXmlElement(Field element) throws XmlSerializationException;
     }
 
-    static <T> void visitFields(T obj, Visitor visitor) {
+    static <T> void visitFields(T obj, Visitor<T> visitor) throws XmlSerializationException {
         visitor.start(obj);
-
-        for (Field field : obj.getClass().getFields()) {
-            Class<?> fieldClazz = field.getDeclaringClass();
-            if (fieldClazz.isAnnotationPresent(XmlElement.class)) {
+        for (Field field : obj.getClass().getDeclaredFields()) {
+            if (field.isAnnotationPresent(XmlElement.class)) {
                 visitor.visitXmlElement(field);
-            }
-            else if(fieldClazz.isAnnotationPresent(XmlAttribute.class)) {
+            } else if (field.isAnnotationPresent(XmlAttribute.class)) {
                 visitor.visitAttribute(field);
-            }
-            else if (fieldClazz.isAnnotationPresent(XmlValue.class)) {
-                visitor.visitXmlElement(field);
+            } else if (field.isAnnotationPresent(XmlValue.class)) {
+                visitor.visitValue(field);
             }
         }
     }

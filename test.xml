@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<a   name="as"  color="green">
-    abcd
+<a age="22">
     <!-- comment -->
-    <child/>
-    <child abc="asdasd"/>
-    mixedcontent
+    <hobby>
+        a
+        <f/>
+        b
+    </hobby>
+    <hobby>
+        d
+    </hobby>
+    <hobby/>
 </a>

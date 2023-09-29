@@ -5,13 +5,13 @@ import com.sps.xml.exception.XmlParseException;
 import java.util.Stack;
 
 public class XmlTreeBuilder {
-    public XmlTree build(String xmlString) throws XmlParseException {
+    public static XmlTree build(String xmlString) throws XmlParseException {
         XmlTree tree = new XmlTree();
         tree.setRoot(parse(xmlString));
         return tree;
     }
 
-    private XmlTree.XmlNode parse(String xmlString) throws XmlParseException {
+    private static XmlTree.XmlNode parse(String xmlString) throws XmlParseException {
         //TODO: Rewrite this shit
         xmlString = trimXmlString(xmlString);
         if (xmlString.isEmpty()) {
@@ -62,20 +62,20 @@ public class XmlTreeBuilder {
         return node;
     }
 
-    private boolean isTag(String xmlString) {
+    private static boolean isTag(String xmlString) {
         return xmlString.startsWith("<");
     }
 
-    private boolean isOpenTag(String xmlString) {
+    private static boolean isOpenTag(String xmlString) {
         return !xmlString.startsWith("</");
     }
 
-    private boolean isCloseTag(String xmlString) {
+    private static boolean isCloseTag(String xmlString) {
         return xmlString.startsWith("</") || (xmlString.indexOf("/>") < xmlString.indexOf(">")
                 && xmlString.contains("/>"));
     }
 
-    private String getTagName(String xmlString) throws XmlParseException {
+    private static String getTagName(String xmlString) throws XmlParseException {
         int endOfName = -1;
         for (String varOfNameEnd : new String[] {" ", "/>", ">"}) {
             int pos = xmlString.indexOf(varOfNameEnd);
@@ -90,7 +90,7 @@ public class XmlTreeBuilder {
         return xmlString.substring(xmlString.startsWith("</") ? 2 : 1, endOfName);
     }
 
-    private void setTagAttributes(String xmlString, XmlTree.XmlNode node) throws XmlParseException {
+    private static void setTagAttributes(String xmlString, XmlTree.XmlNode node) throws XmlParseException {
         try {
             for (String attr : xmlString.substring(0, xmlString.indexOf(">")).split(" ")) {
                 if (attr.contains("=")) {
@@ -107,7 +107,7 @@ public class XmlTreeBuilder {
         }
     }
 
-    private String trimXmlString(String xmlString) throws XmlParseException {
+    private static String trimXmlString(String xmlString) throws XmlParseException {
         xmlString = xmlString.strip();
 
         String closeStatement;

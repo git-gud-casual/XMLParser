@@ -5,14 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="786b9761-3d71-412b-80c0-a99febc96916" name="Changes" comment="Added XmlTree and XmlTreeBuilder">
-      <change afterPath="$PROJECT_DIR$/src/com/sps/xml/serialization/Deserialization.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/sps/xml/serialization/ObjectNavigator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/sps/xml/serialization/Serialization.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/sps/xml/exception/XmlSerializationException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/sps/xml/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/annotation/XmlElementWrapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/Xml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/Xml.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlTreeBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlTreeBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/serialization/Deserialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/serialization/Deserialization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/serialization/ObjectNavigator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/serialization/ObjectNavigator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/serialization/Serialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/serialization/Serialization.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

@@ -1,45 +1,47 @@
 package com.sps.xml;
 
+import com.sps.xml.annotation.XmlAttribute;
 import com.sps.xml.annotation.XmlElement;
+import com.sps.xml.annotation.XmlValue;
 import com.sps.xml.exception.XmlParseException;
-import com.sps.xml.parser.XmlTreeBuilder;
+import com.sps.xml.exception.XmlSerializationException;
 
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-@XmlElement(name = "123")
-class XmlRoot {
-    @XmlElement(name = "341")
-    public static class XmlChild {
+@XmlElement(name = "a")
+class A {
+    @XmlAttribute(name = "age")
+    public Integer age;
 
+    static class Interest {
+        @XmlValue
+        String interest;
     }
-    private XmlChild child;
+
+    @XmlElement(name = "hobby")
+    public Interest[] interests = new Interest[] {new Interest(), new Interest(), new Interest()};
 }
 
 
 public class Main {
-
-
-    public static void main(String[] args) throws NoSuchFieldException, IOException, XmlParseException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
-        /*
-        XmlTreeBuilder builder = new XmlTreeBuilder();
-
+    public static void main(String[] args) throws XmlSerializationException, IOException, XmlParseException {
         StringBuilder stringBuilder = new StringBuilder();
         for (String line : Files.readAllLines(Paths.get("test.xml"))) {
             stringBuilder.append(line);
         }
 
-        System.out.println(builder.build(stringBuilder.toString()).toString());*/
-
-        XmlRoot xmlRoot = new XmlRoot();
-        Field child = xmlRoot.getClass().getDeclaredFields()[0];
-        child.setAccessible(true);
-        child.set(xmlRoot, new XmlRoot.XmlChild());
-        System.out.println(child.get(xmlRoot));
+        A a = (new Xml().fromXML(stringBuilder.toString(), A.class));
+        System.out.println("Age:");
+        System.out.println(a.age);
+        System.out.print("Interests (count ");
+        System.out.print(a.interests.length);
+        System.out.println(")");
+        System.out.println(a.interests[0].interest);
+        System.out.println(a.interests[1].interest);
+        System.out.println(a.interests[2].interest);
+        System.out.println((new Xml()).toXML(a));
     }
 }
+
