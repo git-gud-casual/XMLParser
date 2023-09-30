@@ -4,18 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="786b9761-3d71-412b-80c0-a99febc96916" name="Changes" comment="Added serialization and deserialization">
-      <change afterPath="$PROJECT_DIR$/src/com/sps/tests/XmlTest.java" afterDir="false" />
+    <list default="true" id="786b9761-3d71-412b-80c0-a99febc96916" name="Changes" comment="Added tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/XMLParser.iml" beforeDir="false" afterPath="$PROJECT_DIR$/XMLParser.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/Xml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/Xml.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/XmlTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlTreeBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/XmlTreeBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/serialization/Deserialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/Deserialization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/serialization/ObjectNavigator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/ObjectNavigator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/serialization/Serialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/Serialization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/tests/XmlTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/tests/XmlTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +145,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696031579020</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added tests">
+      <option name="closed" value="true" />
+      <created>1696037724631</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1696037724631</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -172,6 +171,7 @@
     <MESSAGE value="Added annotations" />
     <MESSAGE value="Added XmlTree and XmlTreeBuilder" />
     <MESSAGE value="Added serialization and deserialization" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added serialization and deserialization" />
+    <MESSAGE value="Added tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added tests" />
   </component>
 </project>

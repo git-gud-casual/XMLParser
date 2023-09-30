@@ -34,6 +34,17 @@ class XmlTest {
         Child child;
     }
 
+    @XmlElement(name = "root")
+    interface TestInterface {}
+    @XmlElement(name = "root")
+    abstract static class TestAbstract {}
+
+    @XmlElement(name = "root")
+    static class TestClass {
+        @XmlValue
+        Object unknownThing;
+    }
+
     @Test
     void testDeserialization() throws XmlParseException, XmlSerializationException {
         Root root = Xml.fromXML("<root attr1=\"test attr1\"/>", Root.class);
@@ -85,5 +96,27 @@ class XmlTest {
         assertNotNull(cloneRoot.child.child);
         assertTrue(Math.abs(root.child.child.value - cloneRoot.child.child.value) < Math.pow(10, -16));
         System.out.println("Passed test 3");
+    }
+
+    @Test
+    void testParseException() {
+        assertThrows(XmlParseException.class, () -> {
+            Xml.fromXML("<root attr1=\"attr\">", Root.class);
+        });
+        System.out.println("Passed test 4");
+    }
+
+    @Test
+    void testSerializationException() {
+        assertThrows(XmlSerializationException.class, () -> {
+            Xml.fromXML("<root attr1=\"attr\"/>", TestInterface.class);
+        });
+        assertThrows(XmlSerializationException.class, () -> {
+            Xml.fromXML("<root attr1=\"attr\"/>", TestAbstract.class);
+        });
+        assertThrows(XmlSerializationException.class, () -> {
+            Xml.fromXML("<root attr1=\"attr\">unknownValueType</root>", TestClass.class);
+        });
+        System.out.println("Passed test 5");
     }
 }
