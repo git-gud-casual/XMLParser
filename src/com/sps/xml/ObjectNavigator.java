@@ -1,4 +1,4 @@
-package com.sps.xml.serialization;
+package com.sps.xml;
 
 import com.sps.xml.annotation.XmlAttribute;
 import com.sps.xml.annotation.XmlElement;

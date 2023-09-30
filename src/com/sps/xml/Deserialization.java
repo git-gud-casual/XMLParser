@@ -1,9 +1,8 @@
-package com.sps.xml.serialization;
+package com.sps.xml;
 
 import com.sps.xml.annotation.XmlAttribute;
 import com.sps.xml.annotation.XmlElement;
 import com.sps.xml.exception.XmlSerializationException;
-import com.sps.xml.parser.XmlTree;
 
 import java.lang.reflect.Array;
 import java.lang.reflect.Constructor;
@@ -13,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class Deserialization {
+final class Deserialization {
     private static class Visitor<T> implements ObjectNavigator.Visitor<T> {
         private T object;
         private final XmlTree.XmlNode currNode;
@@ -32,7 +31,6 @@ public class Deserialization {
         @Override
         public void visitAttribute(Field attribute) throws XmlSerializationException {
             attribute.setAccessible(true);
-            System.out.println(attribute.getName());
 
             try {
                 String attrName = attribute.getAnnotation(XmlAttribute.class).name();
@@ -93,7 +91,7 @@ public class Deserialization {
         }
 
         private Object strToFieldClass(Field field, String string) throws XmlSerializationException {
-            if (string == null) {
+            if (string == null || string.isEmpty()) {
                 return null;
             }
 
@@ -152,7 +150,7 @@ public class Deserialization {
     public static <T> T deserialization(XmlTree tree, Class<T> clazz) throws XmlSerializationException {
         try {
             if (tree.getRoot() == null || !clazz.getAnnotation(XmlElement.class)
-                    .name().equals(tree.getRoot().getName()) || clazz.isSynthetic()) {
+                    .name().equals(tree.getRoot().getName())) {
                 return null;
             }
         } catch (NullPointerException e) {

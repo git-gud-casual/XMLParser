@@ -1,10 +1,10 @@
-package com.sps.xml.parser;
+package com.sps.xml;
 
 import com.sps.xml.exception.XmlParseException;
 
 import java.util.Stack;
 
-public class XmlTreeBuilder {
+final class XmlTreeBuilder {
     public static XmlTree build(String xmlString) throws XmlParseException {
         XmlTree tree = new XmlTree();
         tree.setRoot(parse(xmlString));
@@ -12,20 +12,17 @@ public class XmlTreeBuilder {
     }
 
     private static XmlTree.XmlNode parse(String xmlString) throws XmlParseException {
-        //TODO: Rewrite this shit
         xmlString = trimXmlString(xmlString);
         if (xmlString.isEmpty()) {
             return null;
         }
 
-        XmlTree.XmlNode node = new XmlTree.XmlNode();
+        XmlTree.XmlNode node;
         Stack<XmlTree.XmlNode> nodeStack = new Stack<>();
         do {
-            System.out.println(xmlString);
-
-            if (!isTag(xmlString)) {
+            if (!startsWithTag(xmlString)) {
                 if (nodeStack.empty()) {
-                    throw new XmlParseException("Unexpected closing statement");
+                    throw new XmlParseException("Expected new tag");
                 }
                 else if (!xmlString.contains("<")) {
                     throw new XmlParseException("Expected new tag opening bracket");
@@ -36,37 +33,37 @@ public class XmlTreeBuilder {
                 node.setValue(node.getValue() + xmlString.substring(0, newTagBegin).trim());
                 xmlString = xmlString.substring(newTagBegin);
             }
-            else if (isOpenTag(xmlString)) {
-                node = new XmlTree.XmlNode();
-                node.setParent(nodeStack.empty() ? null : nodeStack.peek());
-                node.setName(getTagName(xmlString));
-                setTagAttributes(xmlString, node);
-                if (!isCloseTag(xmlString)) {
-                    nodeStack.add(node);
+            else {
+                if (startsWithOpenTag(xmlString)) {
+                    node = new XmlTree.XmlNode();
+                    node.setParent(nodeStack.empty() ? null : nodeStack.peek());
+                    node.setName(getTagName(xmlString));
+                    setTagAttributes(xmlString, node);
+                    if (!isCloseTag(xmlString)) {
+                        nodeStack.add(node);
+                    }
+                } else {
+                    node = nodeStack.pop();
+                    if (!node.getName().equals(getTagName(xmlString))) {
+                        throw new XmlParseException("Waiting closing statement");
+                    }
                 }
                 xmlString = xmlString.substring(xmlString.indexOf('>') + 1);
-            }
-            else {
-                node = nodeStack.pop();
-                if (!node.getName().equals(getTagName(xmlString))) {
-                    throw new XmlParseException("Waiting closing statement");
-                }
-                xmlString = xmlString.substring(xmlString.indexOf(">") + 1);
             }
             xmlString = trimXmlString(xmlString);
         } while (!nodeStack.empty() && !xmlString.isEmpty());
         if (!nodeStack.empty()) {
-            throw new XmlParseException("Unexpected EOF");
+            throw new XmlParseException("Expected closing statement");
         }
 
         return node;
     }
 
-    private static boolean isTag(String xmlString) {
+    private static boolean startsWithTag(String xmlString) {
         return xmlString.startsWith("<");
     }
 
-    private static boolean isOpenTag(String xmlString) {
+    private static boolean startsWithOpenTag(String xmlString) {
         return !xmlString.startsWith("</");
     }
 
@@ -91,16 +88,17 @@ public class XmlTreeBuilder {
     }
 
     private static void setTagAttributes(String xmlString, XmlTree.XmlNode node) throws XmlParseException {
+        int beginOfAttr = xmlString.indexOf(" ");
+        if (beginOfAttr == -1 || beginOfAttr > xmlString.indexOf(">")) {
+            return;
+        }
+
         try {
-            for (String attr : xmlString.substring(0, xmlString.indexOf(">")).split(" ")) {
-                if (attr.contains("=")) {
-                    String[] nameAndValue = attr.split("=");
-                    if (!(nameAndValue[1].startsWith("\"") && nameAndValue[1].endsWith("\""))) {
-                        throw new XmlParseException("Value should be in \"\"");
-                    }
-                    node.addAttribute(nameAndValue[0], nameAndValue[1].substring(1,
-                            nameAndValue[1].length() - 1));
-                }
+            String[] attr = xmlString.substring(beginOfAttr + 1, xmlString.indexOf(">")).split("=\"");
+            for (int i = 0; i < attr.length; i += 2) {
+                String name = attr[i].trim();
+                String value = attr[i + 1].substring(0, attr[i + 1].indexOf('\"'));
+                node.addAttribute(name, value);
             }
         } catch (IndexOutOfBoundsException e) {
             throw new XmlParseException("Error while parsing attributes");

@@ -1,8 +1,10 @@
-package com.sps.xml.parser;
+package com.sps.xml;
 
 import java.util.*;
 
-final public class XmlTree {
+final class XmlTree {
+    public static int STRING_INDENT = 4;
+
     final static public class XmlNode {
         private XmlNode parent;
 
@@ -69,12 +71,17 @@ final public class XmlTree {
             child.parent = this;
         }
 
-        public Iterator<XmlNode> childrenIterator() {
-            return children.stream().iterator();
-        }
-
         public List<XmlNode> getChildren() {
             return new ArrayList<>(children);
+        }
+
+        public String getTagString() {
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.append("<").append(getName());
+            for (Map.Entry<String, String> entry : attributes.entrySet()) {
+                stringBuilder.append(String.format(" %s=\"%s\"", entry.getKey(), entry.getValue()));
+            }
+            return stringBuilder.toString();
         }
     }
 
@@ -98,24 +105,23 @@ final public class XmlTree {
             int indent = 0;
             void buildString(XmlNode node) {
                 stringBuilder.append(" ".repeat(indent));
-                stringBuilder.append("<").append(node.getName());
-                for (Map.Entry<String, String> entry : node.attributes.entrySet()) {
-                    stringBuilder.append(String.format(" %s=\"%s\"", entry.getKey(), entry.getValue()));
-                }
+                stringBuilder.append(node.getTagString());
 
                 if (!node.hasChildren() && node.value.isEmpty()) {
                     stringBuilder.append("/>");
                 }
                 else {
                     stringBuilder.append(">\n");
-                    indent += 2;
-                    stringBuilder.append(" ".repeat(indent));
-                    stringBuilder.append(node.value).append('\n');
+                    indent += STRING_INDENT;
+                    if (!node.value.isEmpty()) {
+                        stringBuilder.append(" ".repeat(indent));
+                        stringBuilder.append(node.value).append('\n');
+                    }
                     for (XmlNode child : node.children) {
                         buildString(child);
                         stringBuilder.append('\n');
                     }
-                    indent -= 2;
+                    indent -= STRING_INDENT;
                     stringBuilder.append(" ".repeat(indent));
                     stringBuilder.append(String.format("</%s>", node.getName()));
                 }

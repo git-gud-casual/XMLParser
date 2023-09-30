@@ -4,17 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="786b9761-3d71-412b-80c0-a99febc96916" name="Changes" comment="Added XmlTree and XmlTreeBuilder">
-      <change afterPath="$PROJECT_DIR$/src/com/sps/xml/exception/XmlSerializationException.java" afterDir="false" />
+    <list default="true" id="786b9761-3d71-412b-80c0-a99febc96916" name="Changes" comment="Added serialization and deserialization">
+      <change afterPath="$PROJECT_DIR$/src/com/sps/tests/XmlTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XMLParser.iml" beforeDir="false" afterPath="$PROJECT_DIR$/XMLParser.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/Main.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/sps/xml/Xml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/Xml.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlTreeBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlTreeBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/serialization/Deserialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/serialization/Deserialization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/serialization/ObjectNavigator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/serialization/ObjectNavigator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/serialization/Serialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/serialization/Serialization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/XmlTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlTreeBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/XmlTreeBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/serialization/Deserialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/Deserialization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/serialization/ObjectNavigator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/ObjectNavigator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/serialization/Serialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/Serialization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +27,7 @@
       <list>
         <option value="AnnotationType" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -44,11 +46,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.sps.tests" />
+      <recent name="com.sps.xml" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.Main (2)">
+  <component name="RunManager" selected="JUnit.XmlTest">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.sps.xml.Main" />
       <module name="XMLParser" />
@@ -82,8 +100,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="XmlTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="XMLParser" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sps.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sps.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.sps.tests.XmlTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.XmlTest" />
         <item itemvalue="Application.Main (2)" />
         <item itemvalue="Application.Main (1)" />
       </list>
@@ -112,7 +146,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695176712675</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added serialization and deserialization">
+      <option name="closed" value="true" />
+      <created>1696031579020</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1696031579020</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -129,6 +171,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added annotations" />
     <MESSAGE value="Added XmlTree and XmlTreeBuilder" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added XmlTree and XmlTreeBuilder" />
+    <MESSAGE value="Added serialization and deserialization" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added serialization and deserialization" />
   </component>
 </project>
