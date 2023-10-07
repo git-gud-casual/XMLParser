@@ -104,23 +104,18 @@ class XmlTest {
 
     @Test
     void testParseException() {
-        assertThrows(XmlParseException.class, () -> {
-            Xml.fromXML("<root attr1=\"attr\">", Root.class);
-        });
+        assertThrows(XmlParseException.class, () -> Xml.fromXML("<root attr1=\"attr\">", Root.class));
         System.out.println("Passed test 4");
     }
 
     @Test
     void testSerializationException() {
-        assertThrows(XmlSerializationException.class, () -> {
-            Xml.fromXML("<root attr1=\"attr\"/>", TestInterface.class);
-        });
-        assertThrows(XmlSerializationException.class, () -> {
-            Xml.fromXML("<root attr1=\"attr\"/>", TestAbstract.class);
-        });
-        assertThrows(XmlSerializationException.class, () -> {
-            Xml.fromXML("<root attr1=\"attr\">unknownValueType</root>", TestClass.class);
-        });
+        assertThrows(XmlSerializationException.class, () ->
+                Xml.fromXML("<root attr1=\"attr\"/>", TestInterface.class));
+        assertThrows(XmlSerializationException.class, () ->
+                Xml.fromXML("<root attr1=\"attr\"/>", TestAbstract.class));
+        assertThrows(XmlSerializationException.class, () ->
+                Xml.fromXML("<root attr1=\"attr\">unknownValueType</root>", TestClass.class));
         System.out.println("Passed test 5");
     }
 }
