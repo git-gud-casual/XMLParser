@@ -56,7 +56,11 @@ class XmlTest {
 
     @Test
     void testDeserializationAndSerialization() throws XmlParseException, XmlSerializationException {
-        Root root = Xml.fromXML("<root><child>0</child><child>1</child><another-child/></root>", Root.class);
+        Root root = Xml.fromXML("""
+                                        <root><child>0</child>
+                                        <child>1</child>
+                                        <!-- comment -->
+                                        <another-child/></root>""", Root.class);
         assertNull(root.attr1);
         assertNotNull(root.child);
         assertNull(root.child.value);

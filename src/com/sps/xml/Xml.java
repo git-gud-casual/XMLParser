@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class Xml {
+final public class Xml {
     public static  <T> T fromXML(Path filePath, Class<T> clazz) throws IOException, XmlParseException, XmlSerializationException {
         StringBuilder stringBuilder = new StringBuilder();
         for (String line : Files.readAllLines(filePath)) {

@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="786b9761-3d71-412b-80c0-a99febc96916" name="Changes" comment="Added tests">
+    <list default="true" id="786b9761-3d71-412b-80c0-a99febc96916" name="Changes" comment="Added XmlElement annotation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XMLParser.iml" beforeDir="false" afterPath="$PROJECT_DIR$/XMLParser.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/sps/tests/XmlTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/tests/XmlTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/Xml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/Xml.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,9 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="AnnotationType" />
         <option value="Class" />
-        <option value="JUnit5 Test Class" />
+        <option value="AnnotationType" />
       </list>
     </option>
   </component>
@@ -28,9 +29,6 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 4
-}</component>
   <component name="ProjectId" id="2VT6aZ2RZgqJrUfyyi8yiTQyb79" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -43,47 +41,13 @@
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "create.test.in.the.same.root": "true"
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "/home/arch/IdeaProjects/KGTask1"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="com.sps.tests" />
-      <recent name="com.sps.xml" />
-    </key>
-  </component>
   <component name="RunManager" selected="JUnit.XmlTest">
-    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.sps.xml.Main" />
-      <module name="XMLParser" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.sps.xml.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.sps.xml.Main" />
-      <module name="XMLParser" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.sps.xml.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.sps.xml.Main" />
       <module name="XMLParser" />
@@ -109,8 +73,6 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.XmlTest" />
-        <item itemvalue="Application.Main (2)" />
-        <item itemvalue="Application.Main (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -123,55 +85,18 @@
       <option name="presentableId" value="Default" />
       <updated>1694847788369</updated>
     </task>
-    <task id="LOCAL-00001" summary="Added annotations">
-      <created>1695171413029</created>
+    <task id="LOCAL-00001" summary="Added XmlElement annotation">
+      <created>1694851052733</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1695171413029</updated>
+      <updated>1694851052733</updated>
     </task>
-    <task id="LOCAL-00002" summary="Added XmlTree and XmlTreeBuilder">
-      <created>1695176712675</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1695176712675</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Added serialization and deserialization">
-      <option name="closed" value="true" />
-      <created>1696031579020</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1696031579020</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Added tests">
-      <option name="closed" value="true" />
-      <created>1696037724631</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1696037724631</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added annotations" />
-    <MESSAGE value="Added XmlTree and XmlTreeBuilder" />
-    <MESSAGE value="Added serialization and deserialization" />
-    <MESSAGE value="Added tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added tests" />
+    <MESSAGE value="Added XmlElement annotation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added XmlElement annotation" />
   </component>
 </project>
