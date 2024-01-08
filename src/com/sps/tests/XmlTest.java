@@ -23,7 +23,6 @@ class XmlTest {
             AnotherChild child;
         }
 
-
         @XmlAttribute(name = "attr1")
         String attr1;
 
