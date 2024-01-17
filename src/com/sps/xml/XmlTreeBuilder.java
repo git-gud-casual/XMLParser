@@ -1,76 +1,9 @@
 package com.sps.xml;
 
-import com.sps.xml.exception.XmlLexerException;
 import com.sps.xml.exception.XmlParseException;
 
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
-
-record Token(int tokenType, String value) {
-    public static final int END = 1,
-                            TEXT = 1 << 2,
-                            OPENING_BLOCK_TAG_NAME = 1 << 3,
-                            CLOSING_BLOCK_TAG_NAME = 1 << 4,
-                            ATTRIBUTE_NAME = 1 << 5,
-                            ATTRIBUTE_VALUE = 1 << 6,
-                            COMMENT = 1 << 7;
-}
-
-
-class XmlLexer implements Iterable<Token> {
-    private final List<Token> tokens = new LinkedList<>();
-
-    private final String inS;
-    private int curTokenType;
-    private StringBuffer curVal;
-
-    public XmlLexer(String inS) {
-        this.inS = inS;
-    }
-
-    public void scan() throws XmlLexerException {
-        curTokenType = Token.TEXT;
-        curVal = new StringBuffer();
-
-        for (char c : inS.toCharArray()) {
-            process(c);
-        }
-        curTokenType = Token.END;
-    }
-
-    private void process(char c) throws XmlLexerException {
-        switch (curTokenType) {
-            case Token.END:
-                throw new XmlLexerException("Unexpected EOF");
-            case Token.TEXT:
-                if (c == '>') {
-                    throw new XmlLexerException("Unexpected >");
-                }
-                else if (c == '<') {
-                    if (!curVal.isEmpty()) {
-                        tokens.add(new Token(curTokenType, String.join(curVal)));
-                        curVal.delete(0, curVal.length());
-                    }
-                    curTokenType = Token.OPENING_BLOCK_TAG_NAME | Token.COMMENT;
-                }
-                else {
-                    curVal.append(c);
-                }
-                break;
-            case Token.OPENING_BLOCK_TAG_NAME | Token.COMMENT:
-                break;
-
-        }
-    }
-
-    @Override
-    public Iterator<Token> iterator() {
-        return tokens.iterator();
-    }
-}
 
 final class XmlTreeBuilder {
     public static XmlTree build(String xmlString) throws XmlParseException {
