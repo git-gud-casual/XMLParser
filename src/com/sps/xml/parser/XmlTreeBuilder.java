@@ -101,7 +101,9 @@ public final class XmlTreeBuilder {
                     }
                     break;
                 case Token.CONTENT:
-                    nodeStack.peek().addValue(token.value());
+                    if (!nodeStack.isEmpty()) {
+                        nodeStack.peek().addValue(token.value());
+                    }
                     break;
                 case Token.EQUAL_SIGN:
                 case Token.ATTRIBUTE_VALUE:

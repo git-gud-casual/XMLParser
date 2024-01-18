@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class Serializer {
+    private XmlNode root;
     private class Visitor<T> implements ObjectNavigator.Visitor<T> {
         private T object;
         private XmlNode node;
@@ -19,6 +20,9 @@ public final class Serializer {
         public void start(T obj) {
             object = obj;
             node = new XmlNode();
+            if (root == null) {
+                root = node;
+            }
         }
 
         @Override
@@ -67,15 +71,25 @@ public final class Serializer {
         }
 
         private XmlNode getChildNode(Object childObject, XmlElement anno) throws XmlSerializationException {
-            Visitor<Object> childVisitor = new Visitor<>();
-            ObjectNavigator.visitFields(childObject, childVisitor);
-            childVisitor.node.setName(anno.name());
+            XmlNode childNode;
+            if (childObject.getClass().isPrimitive() ||
+                    SerializationUtils.isWrapperType(childObject.getClass()) ||
+                    childObject.getClass() == String.class) {
+                childNode = new XmlNode();
+                childNode.setValue(String.valueOf(childObject));
+            } else {
+                Visitor<Object> childVisitor = new Visitor<>();
+                ObjectNavigator.visitFields(childObject, childVisitor);
+                childNode = childVisitor.node;
+            }
+
+            childNode.setName(anno.name());
             if (!anno.namespace().isEmpty()) {
                 URI ns = URI.create(anno.namespace());
-                childVisitor.node.setPrefix(getPrefixByNamespace(ns));
-                node.addNamespace(getPrefixByNamespace(ns), ns);
+                childNode.setPrefix(getPrefixByNamespace(ns));
+                root.addNamespace(getPrefixByNamespace(ns), ns);
             }
-            return childVisitor.node;
+            return childNode;
         }
     }
 

@@ -12,6 +12,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Objects;
 
 public final class Deserializer {
     private static class Visitor<T> implements ObjectNavigator.Visitor<T> {
@@ -66,6 +67,19 @@ public final class Deserializer {
                     element.set(object, objects.toArray((Object[])
                             Array.newInstance(fieldClazz.getComponentType(),
                                     objects.size())));
+                } else if (fieldClazz.isPrimitive() ||
+                        fieldClazz == String.class ||
+                        SerializationUtils.isWrapperType(fieldClazz)) {
+                    Iterator<XmlNode> iterator = currNode.getChildren().iterator();
+                    while (iterator.hasNext()) {
+                        XmlNode childNode = iterator.next();
+                        if (annotationIsNode(element.getAnnotation(XmlElement.class), childNode)) {
+                            element.set(object, strToFieldClass(element, childNode.getValue()));
+                            iterator.remove();
+                            return;
+                        }
+                    }
+                    element.set(object, null);
                 }
                 else {
                     Iterator<XmlNode> iterator = currNode.getChildren().iterator();
@@ -153,9 +167,7 @@ public final class Deserializer {
         isNode = isNode &&
                 ((node.getPrefix() == null && namespace.equals(URI.create(""))
                 || namespace.equals(node.getNamespace(node.getPrefix()))) ||
-
-                (node.getDefaultNamespace() == null && namespace.equals(URI.create("")) && node.getPrefix() == null) ||
-                        namespace.equals(node.getDefaultNamespace()));
+                        Objects.equals(node.getDefaultNamespace(), URI.create(anno.namespace())) && node.getPrefix() == null);
         return isNode;
     }
 

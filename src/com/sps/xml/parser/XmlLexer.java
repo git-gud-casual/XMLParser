@@ -160,7 +160,7 @@ public final class XmlLexer {
     private void tagBeginHandler(char c) {
         if (c == ' ' || c == '/' || c == '>') {
             if (!curVal.isEmpty()) {
-                tokens.add(new Token(curTokenType, curVal.toString()));
+                tokens.add(new Token(curTokenType, curVal.toString().strip()));
                 curVal.setLength(0);
             }
 
@@ -184,7 +184,7 @@ public final class XmlLexer {
     private void tagCloseHandler(char c) {
         if (c == ' ' || c == '/' || c == '>') {
             if (!curVal.isEmpty()) {
-                tokens.add(new Token(curTokenType, curVal.toString()));
+                tokens.add(new Token(curTokenType, curVal.toString().strip()));
                 curVal.setLength(0);
             }
             if (c == '>') {
@@ -225,7 +225,7 @@ public final class XmlLexer {
     @StateHandler(Token.ATTRIBUTE_NAME)
     private void attributeNameHandler(char c) {
         if (c == '=') {
-            tokens.add(new Token(curTokenType, curVal.toString()));
+            tokens.add(new Token(curTokenType, curVal.toString().strip()));
             curVal.setLength(0);
             curTokenType = Token.EQUAL_SIGN;
         }

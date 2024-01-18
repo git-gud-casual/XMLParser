@@ -1,10 +1,7 @@
 package com.sps.xml.tree;
 
 import java.net.URI;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public final class XmlNode {
     private XmlNode parent;
@@ -89,9 +86,7 @@ public final class XmlNode {
     }
 
     public void addNamespace(String prefix, URI uri) {
-        if (getNamespace(prefix) == null || !getNamespace(prefix).equals(uri)) {
-            prefixToNamespace.put(prefix, uri);
-        }
+        prefixToNamespace.put(prefix, uri);
     }
 
     public URI getNamespace(String prefix) {

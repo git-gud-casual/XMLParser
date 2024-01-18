@@ -19,11 +19,8 @@ final public class Xml {
             XmlSerializationException,
             XmlLexerException
     {
-        StringBuilder stringBuilder = new StringBuilder();
-        for (String line : Files.readAllLines(filePath)) {
-            stringBuilder.append(line);
-        }
-        return fromXML(stringBuilder.toString(), clazz);
+
+        return fromXML(Files.readString(filePath), clazz);
     }
 
     public static <T> T fromXML(String xmlString, Class<T> clazz)
