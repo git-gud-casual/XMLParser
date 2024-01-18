@@ -1,7 +1,6 @@
 package tests.com.sps.xml.serializers;
 
 import com.sps.xml.Xml;
-import com.sps.xml.annotation.XmlAttribute;
 import com.sps.xml.annotation.XmlElement;
 import com.sps.xml.annotation.XmlValue;
 import com.sps.xml.parser.XmlLexerException;
@@ -10,7 +9,24 @@ import com.sps.xml.serializers.XmlSerializationException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.Objects;
+
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+@XmlElement(name = "root")
+interface RootInterface {
+
+}
+
+@XmlElement(name = "root")
+abstract class RootAbs {
+
+}
+
+@XmlElement(name = "root")
+class RootWrong {
+    @XmlValue
+    Object problemObject;
+}
 
 
 public final class DeserializerTest {
@@ -96,5 +112,15 @@ public final class DeserializerTest {
 
         Root givenData = Xml.fromXML(inData, Root.class);
         Assertions.assertEquals(outData, givenData);
+    }
+
+    @Test
+    void deserializerTest5() {
+        assertThrows(XmlSerializationException.class, () ->
+                Xml.fromXML("<root attr1=\"attr\"/>", RootInterface.class));
+        assertThrows(XmlSerializationException.class, () ->
+                Xml.fromXML("<root attr1=\"attr\"/>", RootAbs.class));
+        assertThrows(XmlSerializationException.class, () ->
+                Xml.fromXML("<root attr1=\"attr\">unknownValueType</root>", RootWrong.class));
     }
 }

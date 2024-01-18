@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="786b9761-3d71-412b-80c0-a99febc96916" name="Changes" comment="Deserializer handles namespaces + tests">
-      <change afterPath="$PROJECT_DIR$/src/tests/com/sps/xml/serializers/NamespaceRoot.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/com/sps/xml/serializers/Root.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/com/sps/xml/serializers/SerializerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/Xml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/Xml.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/serializers/Deserialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/serializers/Deserializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/serializers/ObjectNavigator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/serializers/ObjectNavigator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/serializers/Serialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/serializers/Serializer.java" afterDir="false" />
+    <list default="true" id="786b9761-3d71-412b-80c0-a99febc96916" name="Changes" comment="Serializer handles namespaces + tests">
       <change beforePath="$PROJECT_DIR$/src/tests/com/sps/xml/serializers/DeserializerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/com/sps/xml/serializers/DeserializerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +52,7 @@
       <recent name="tests.com.sps.xml.serializers" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.tests in XMLParser">
+  <component name="RunManager" selected="JUnit.DeserializerTest">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.sps.xml.Main" />
       <module name="XMLParser" />
@@ -144,11 +136,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DeserializerTest" />
+        <item itemvalue="JUnit.XmlTest" />
         <item itemvalue="JUnit.tests in XMLParser" />
         <item itemvalue="JUnit.SerializerTest" />
-        <item itemvalue="JUnit.DeserializerTest" />
         <item itemvalue="JUnit.XmlTreeBuilderTest" />
-        <item itemvalue="JUnit.XmlTest" />
       </list>
     </recent_temporary>
   </component>
@@ -214,7 +206,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705551364760</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Serializer handles namespaces + tests">
+      <option name="closed" value="true" />
+      <created>1705561260826</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1705561260826</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -225,6 +225,7 @@
     <MESSAGE value="Lexer handles comments and prolog" />
     <MESSAGE value="XmlTree builds with namespaces" />
     <MESSAGE value="Deserializer handles namespaces + tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Deserializer handles namespaces + tests" />
+    <MESSAGE value="Serializer handles namespaces + tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Serializer handles namespaces + tests" />
   </component>
 </project>
