@@ -67,6 +67,11 @@ public final class XmlTreeBuilderTest {
     @Test
     void xmlTreeBuilderTest4() throws XmlParserException {
         Token[] inData = {
+                new Token(Token.PROLOG_BEGIN, null),
+                new Token(Token.ATTRIBUTE_NAME, "version"),
+                new Token(Token.EQUAL_SIGN, null),
+                new Token(Token.ATTRIBUTE_VALUE, "1"),
+                new Token(Token.PROLOG_END, null),
                 new Token(Token.TAG_BEGIN, "p:a"),
                 new Token(Token.ATTRIBUTE_NAME, "xmlns:p"),
                 new Token(Token.EQUAL_SIGN, null),
@@ -77,6 +82,7 @@ public final class XmlTreeBuilderTest {
                 new Token(Token.EQUAL_SIGN, null),
                 new Token(Token.ATTRIBUTE_VALUE, "2"),
                 new Token(Token.TAG_END_AND_CLOSE, null),
+                new Token(Token.COMMENT, "comment example"),
                 new Token(Token.TAG_CLOSE, "p:a")
         };
         String outData = """

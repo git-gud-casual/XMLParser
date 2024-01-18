@@ -1,4 +1,4 @@
-package com.sps.xml.exception;
+package com.sps.xml.serializers;
 
 public class XmlSerializationException extends Exception {
     public XmlSerializationException(String message) {

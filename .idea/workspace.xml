@@ -4,23 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="786b9761-3d71-412b-80c0-a99febc96916" name="Changes" comment="Lexer handles comments and prolog">
-      <change afterPath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlTreeBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/sps/xml/tree/XmlNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/com/sps/xml/parser/XmlTreeBuilderTest.java" afterDir="false" />
+    <list default="true" id="786b9761-3d71-412b-80c0-a99febc96916" name="Changes" comment="XmlTree builds with namespaces">
+      <change afterPath="$PROJECT_DIR$/src/com/sps/speedtest/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/com/sps/xml/serializers/DeserializerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/Deserialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/Deserialization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/Serialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/Serialization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/Deserialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/serializers/Deserialization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/ObjectNavigator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/serializers/ObjectNavigator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/Serialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/serializers/Serialization.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/sps/xml/Xml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/Xml.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/XmlTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/tree/XmlTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/XmlTreeBuilder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/annotation/XmlElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/annotation/XmlElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/exception/XmlLexerException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlLexerException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/exception/XmlParseException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlParserException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/parser/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/parser/Token.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlLexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/exception/XmlSerializationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/serializers/XmlSerializationException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tests/XmlTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/XmlTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/com/sps/xml/parser/XmlLexerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/com/sps/xml/parser/XmlLexerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/com/sps/xml/parser/XmlTreeBuilderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/com/sps/xml/parser/XmlTreeBuilderTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,14 +56,7 @@
     &quot;last_opened_file_path&quot;: &quot;/home/arch/IdeaProjects/KGTask1&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.XmlTreeBuilderTest">
-    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="XMLParser" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.DeserializerTest">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.sps.xml.Main" />
       <module name="XMLParser" />
@@ -77,12 +64,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="com.sps.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.sps.Main" />
+    <configuration name="com.sps.speedtest.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sps.speedtest.Main" />
       <module name="XMLParser" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.sps.*" />
+          <option name="PATTERN" value="com.sps.speedtest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -90,16 +77,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="XmlLexerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DeserializerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="XMLParser" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tests.com.sps.xml.parser.*" />
+          <option name="PATTERN" value="tests.com.sps.xml.serializers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tests.com.sps.xml.parser" />
-      <option name="MAIN_CLASS_NAME" value="tests.com.sps.xml.parser.XmlLexerTest" />
+      <option name="PACKAGE_NAME" value="tests.com.sps.xml.serializers" />
+      <option name="MAIN_CLASS_NAME" value="tests.com.sps.xml.serializers.DeserializerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -113,7 +100,7 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.sps.tests" />
+      <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.XmlTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
@@ -135,13 +122,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="tests in XMLParser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="XMLParser" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DeserializerTest" />
         <item itemvalue="JUnit.XmlTreeBuilderTest" />
-        <item itemvalue="JUnit.XmlLexerTest" />
-        <item itemvalue="Application.com.sps.Main" />
-        <item itemvalue="Application.Main (1)" />
         <item itemvalue="JUnit.XmlTest" />
+        <item itemvalue="Application.com.sps.speedtest.Main" />
+        <item itemvalue="JUnit.tests in XMLParser" />
       </list>
     </recent_temporary>
   </component>
@@ -191,7 +192,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705536319801</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="XmlTree builds with namespaces">
+      <option name="closed" value="true" />
+      <created>1705546267328</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1705546267328</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -200,6 +209,7 @@
     <MESSAGE value="Lambda expressions" />
     <MESSAGE value="Updated XmlLexer. Added tests for XmlLexer" />
     <MESSAGE value="Lexer handles comments and prolog" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lexer handles comments and prolog" />
+    <MESSAGE value="XmlTree builds with namespaces" />
+    <option name="LAST_COMMIT_MESSAGE" value="XmlTree builds with namespaces" />
   </component>
 </project>

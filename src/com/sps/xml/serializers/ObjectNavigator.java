@@ -1,13 +1,12 @@
-package com.sps.xml;
+package com.sps.xml.serializers;
 
 import com.sps.xml.annotation.XmlAttribute;
 import com.sps.xml.annotation.XmlElement;
 import com.sps.xml.annotation.XmlValue;
-import com.sps.xml.exception.XmlSerializationException;
 
 import java.lang.reflect.Field;
 
-final class ObjectNavigator {
+public final class ObjectNavigator {
     public interface Visitor<T> {
         void start(T obj);
 

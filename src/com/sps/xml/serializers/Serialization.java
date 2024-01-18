@@ -1,14 +1,13 @@
-package com.sps.xml;
+package com.sps.xml.serializers;
 
 import com.sps.xml.annotation.XmlAttribute;
 import com.sps.xml.annotation.XmlElement;
-import com.sps.xml.exception.XmlSerializationException;
 import com.sps.xml.tree.XmlNode;
 import com.sps.xml.tree.XmlTree;
 
 import java.lang.reflect.Field;
 
-final class Serialization {
+public final class Serialization {
     private static class Visitor<T> implements ObjectNavigator.Visitor<T> {
         private T object;
         private XmlNode node;

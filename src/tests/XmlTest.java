@@ -3,10 +3,10 @@ package tests;
 import static org.junit.jupiter.api.Assertions.*;
 
 import com.sps.xml.annotation.*;
-import com.sps.xml.exception.*;
 import com.sps.xml.Xml;
 import com.sps.xml.parser.XmlLexerException;
 import com.sps.xml.parser.XmlParserException;
+import com.sps.xml.serializers.XmlSerializationException;
 import org.junit.jupiter.api.Test;
 
 class XmlTest {

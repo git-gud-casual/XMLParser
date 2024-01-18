@@ -1,8 +1,7 @@
-package com.sps.xml;
+package com.sps.xml.serializers;
 
 import com.sps.xml.annotation.XmlAttribute;
 import com.sps.xml.annotation.XmlElement;
-import com.sps.xml.exception.XmlSerializationException;
 import com.sps.xml.tree.XmlNode;
 import com.sps.xml.tree.XmlTree;
 
@@ -10,19 +9,18 @@ import java.lang.reflect.Array;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-final class Deserialization {
+public final class Deserialization {
     private static class Visitor<T> implements ObjectNavigator.Visitor<T> {
         private T object;
         private final XmlNode currNode;
-        private final List<XmlNode> nodeChildren;
 
         public Visitor(XmlNode node) {
             currNode = node;
-            nodeChildren = currNode.getChildren();
         }
 
         @Override
@@ -54,15 +52,14 @@ final class Deserialization {
             element.setAccessible(true);
 
             try {
-                String childName = element.getAnnotation(XmlElement.class).name();
                 Class<?> fieldClazz = element.getType();
 
                 if (fieldClazz.isArray()) {
                     ArrayList<Object> objects = new ArrayList<>();
-                    Iterator<XmlNode> iterator = nodeChildren.iterator();
+                    Iterator<XmlNode> iterator = currNode.getChildren().iterator();
                     while (iterator.hasNext()) {
                         XmlNode childNode = iterator.next();
-                        if (childName.equals(childNode.getName())) {
+                        if (annotationIsNode(element.getAnnotation(XmlElement.class), childNode)) {
                             objects.add(getObjectFromNode(fieldClazz.getComponentType(), childNode));
                             iterator.remove();
                         }
@@ -72,10 +69,10 @@ final class Deserialization {
                                     objects.size())));
                 }
                 else {
-                    Iterator<XmlNode> iterator = nodeChildren.iterator();
+                    Iterator<XmlNode> iterator = currNode.getChildren().iterator();
                     while (iterator.hasNext()) {
                         XmlNode childNode = iterator.next();
-                        if (childName.equals(childNode.getName())) {
+                        if (annotationIsNode(element.getAnnotation(XmlElement.class), childNode)) {
                             element.set(object, getObjectFromNode(fieldClazz, childNode));
                             iterator.remove();
                             return;
@@ -149,10 +146,18 @@ final class Deserialization {
         }
     }
 
+    private static boolean annotationIsNode(XmlElement anno, XmlNode node) {
+        String childName = anno.name();
+        URI childNamespace = URI.create(anno.namespace());
+        return childName.equals(node.getName()) &&
+                (node.getPrefix() == null
+                        && childNamespace.equals(URI.create("")) ||
+                        childNamespace.equals(node.getNamespace(node.getPrefix())));
+    }
+
     public static <T> T deserialization(XmlTree tree, Class<T> clazz) throws XmlSerializationException {
         try {
-            if (tree.getRoot() == null || !clazz.getAnnotation(XmlElement.class)
-                    .name().equals(tree.getRoot().getName())) {
+            if (tree.getRoot() == null || !annotationIsNode(clazz.getAnnotation(XmlElement.class), tree.getRoot())) {
                 return null;
             }
         } catch (NullPointerException e) {
