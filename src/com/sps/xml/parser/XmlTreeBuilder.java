@@ -55,7 +55,7 @@ public final class XmlTreeBuilder {
                     break;
                 case Token.ATTRIBUTE_NAME:
                     assert currNode != null;
-                    if (token.value().startsWith("xmlns")) {
+                    if (token.value().startsWith("xmlns:")) {
                         String[] splitName = token.value().split(":");
                         if (token.value().charAt(5) != ':'
                                 || splitName.length != 2 ||
@@ -66,6 +66,15 @@ public final class XmlTreeBuilder {
                         }
                         try {
                             currNode.addNamespace(splitName[1], URI.create(tokens[i + 2].value()));
+                        } catch(IllegalArgumentException e) {
+                            throw new XmlParserException(
+                                    String.format("Namespace should be URI. Given \"%s\"", tokens[i + 2].value())
+                            );
+                        }
+                    }
+                    else if (token.value().equals("xmlns")) {
+                        try {
+                            currNode.setDefaultNamespace(URI.create(tokens[i + 2].value()));
                         } catch(IllegalArgumentException e) {
                             throw new XmlParserException(
                                     String.format("Namespace should be URI. Given \"%s\"", tokens[i + 2].value())

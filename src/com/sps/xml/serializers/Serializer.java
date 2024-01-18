@@ -55,12 +55,8 @@ public final class Serializer {
                 if (childObject != null) {
                     XmlElement anno = element.getAnnotation(XmlElement.class);
                     if (childObject.getClass().isArray()) {
-                        if (((Object[]) childObject).length > 0) {
-                            URI ns = URI.create(anno.namespace());
-                            node.addNamespace(getPrefixByNamespace(ns), ns);
-                            for (Object obj : (Object[]) childObject) {
-                                node.addChild(getChildNode(obj, anno));
-                            }
+                        for (Object obj : (Object[]) childObject) {
+                            node.addChild(getChildNode(obj, anno));
                         }
                     }
                     else {
@@ -77,10 +73,7 @@ public final class Serializer {
             if (!anno.namespace().isEmpty()) {
                 URI ns = URI.create(anno.namespace());
                 childVisitor.node.setPrefix(getPrefixByNamespace(ns));
-
-                if (childVisitor.node.getNamespace(childVisitor.node.getPrefix()) == null) {
-                    childVisitor.node.addNamespace(getPrefixByNamespace(ns), ns);
-                }
+                node.addNamespace(getPrefixByNamespace(ns), ns);
             }
             return childVisitor.node;
         }

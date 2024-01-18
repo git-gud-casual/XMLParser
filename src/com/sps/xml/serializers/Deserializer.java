@@ -146,12 +146,17 @@ public final class Deserializer {
     }
 
     private static boolean annotationIsNode(XmlElement anno, XmlNode node) {
-        String childName = anno.name();
-        URI childNamespace = URI.create(anno.namespace());
-        return childName.equals(node.getName()) &&
-                (node.getPrefix() == null
-                        && childNamespace.equals(URI.create("")) ||
-                        childNamespace.equals(node.getNamespace(node.getPrefix())));
+        String name = anno.name();
+        URI namespace = URI.create(anno.namespace());
+
+        boolean isNode = name.equals(node.getName());
+        isNode = isNode &&
+                ((node.getPrefix() == null && namespace.equals(URI.create(""))
+                || namespace.equals(node.getNamespace(node.getPrefix()))) ||
+
+                (node.getDefaultNamespace() == null && namespace.equals(URI.create("")) && node.getPrefix() == null) ||
+                        namespace.equals(node.getDefaultNamespace()));
+        return isNode;
     }
 
     public static <T> T deserialize(XmlTree tree, Class<T> clazz) throws XmlSerializationException {

@@ -10,6 +10,7 @@ public final class XmlNode {
     private XmlNode parent;
     private String prefix = null;
     private final Map<String, URI> prefixToNamespace = new HashMap<>();
+    private URI defaultNamespace;
 
     private String name;
     private String value;
@@ -88,7 +89,9 @@ public final class XmlNode {
     }
 
     public void addNamespace(String prefix, URI uri) {
-        prefixToNamespace.put(prefix, uri);
+        if (getNamespace(prefix) == null || !getNamespace(prefix).equals(uri)) {
+            prefixToNamespace.put(prefix, uri);
+        }
     }
 
     public URI getNamespace(String prefix) {
@@ -123,6 +126,9 @@ public final class XmlNode {
     private String toString(int indent) {
         StringBuilder builder = new StringBuilder();
         builder.append(" ".repeat(indent)).append("<").append(getNameWithPrefix());
+        if (defaultNamespace != null) {
+            builder.append(String.format(" xmlns=\"%s\"", defaultNamespace));
+        }
         for (Map.Entry<String, URI> entry : prefixToNamespace.entrySet()) {
             builder.append(String.format(" xmlns:%s=\"%s\"", entry.getKey(), entry.getValue()));
         }
@@ -145,5 +151,16 @@ public final class XmlNode {
             builder.append("/>\n");
         }
         return builder.toString();
+    }
+
+    public void setDefaultNamespace(URI namespace) {
+        defaultNamespace = namespace;
+    }
+
+    public URI getDefaultNamespace() {
+        if (defaultNamespace == null && parent != null) {
+            return parent.getDefaultNamespace();
+        }
+        return defaultNamespace;
     }
 }

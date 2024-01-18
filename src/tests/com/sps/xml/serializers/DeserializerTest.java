@@ -123,4 +123,39 @@ public final class DeserializerTest {
         assertThrows(XmlSerializationException.class, () ->
                 Xml.fromXML("<root attr1=\"attr\">unknownValueType</root>", RootWrong.class));
     }
+
+    @Test
+    void deserializerTest6() throws XmlLexerException, XmlSerializationException, XmlParserException {
+        String inData = """
+                <root xmlns="test">
+                    <child>
+                        1
+                    </child>
+                    <child xmlns="test2">
+                        2
+                    </child>
+                </root>
+                """;
+        RootInNamespace outData = new RootInNamespace();
+        outData.child = new RootInNamespace.Child();
+        outData.child.value = 1;
+        outData.child2 = new RootInNamespace.Child();
+        outData.child2.value = 2;
+
+        RootInNamespace givenData = Xml.fromXML(inData, RootInNamespace.class);
+        Assertions.assertEquals(outData, givenData);
+    }
+
+    @Test
+    void deserializerTest7() throws XmlLexerException, XmlSerializationException, XmlParserException {
+        String inData = """
+                <root>
+                    <child>
+                        1
+                    </child>
+                </root>
+                """;
+        RootInNamespace givenData = Xml.fromXML(inData, RootInNamespace.class);
+        Assertions.assertNull(givenData);
+    }
 }

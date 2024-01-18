@@ -44,16 +44,16 @@ public final class SerializerTest {
                 new NamespaceRoot.Child2("Node 2")};
         String outData = """
                 <rootPrefix:root xmlns:rootPrefix="https://test" xmlns:childPrefix="1" xmlns:prefix0="2" attr="attr">
-                    <childPrefix:child xmlns:childPrefix="1">
+                    <childPrefix:child>
                         1
                     </childPrefix:child>
-                    <childPrefix:child xmlns:childPrefix="1">
+                    <childPrefix:child>
                         2
                     </childPrefix:child>
-                    <prefix0:child xmlns:prefix0="2">
+                    <prefix0:child>
                         Node 1
                     </prefix0:child>
-                    <prefix0:child xmlns:prefix0="2">
+                    <prefix0:child>
                         Node 2
                     </prefix0:child>
                 </rootPrefix:root>""";
@@ -77,11 +77,11 @@ public final class SerializerTest {
         inData.child2.value = 2f;
         inData.child2.attrValue = 2;
         String outData = """
-                <root>
+                <root xmlns:prefix0="test">
                     <child value="1">
                         1.0
                     </child>
-                    <prefix0:child xmlns:prefix0="test" value="2">
+                    <prefix0:child value="2">
                         2.0
                     </prefix0:child>
                 </root>""";
@@ -99,11 +99,11 @@ public final class SerializerTest {
         inData.child2.value = 2f;
         inData.child2.attrValue = 2;
         String outData = """
-                <root>
+                <root xmlns:childPrefix="test">
                     <child value="1">
                         1.0
                     </child>
-                    <childPrefix:child xmlns:childPrefix="test" value="2">
+                    <childPrefix:child value="2">
                         2.0
                     </childPrefix:child>
                 </root>""";
@@ -112,5 +112,40 @@ public final class SerializerTest {
                         "child2").getAnnotation(XmlElement.class).namespace()),
                 "childPrefix");
         Assertions.assertEquals(outData, Xml.toXML(inData, nsToPrefix));
+    }
+
+    @Test
+    void serializerTest6() throws XmlSerializationException{
+        RootInNamespace inData = new RootInNamespace();
+        inData.child = new RootInNamespace.Child();
+        inData.child.value = 1;
+        String outData = """
+                <prefix0:root xmlns:prefix0="test">
+                    <prefix0:child>
+                        1
+                    </prefix0:child>
+                </prefix0:root>""";
+
+        Assertions.assertEquals(outData, Xml.toXML(inData));
+    }
+
+    @Test
+    void serializerTest7() throws XmlSerializationException {
+        RootInNamespace inData = new RootInNamespace();
+        inData.child = new RootInNamespace.Child();
+        inData.child.value = 1;
+        inData.child2 = new RootInNamespace.Child();
+        inData.child2.value = 2;
+        String outData = """
+                <prefix0:root xmlns:prefix1="test2" xmlns:prefix0="test">
+                    <prefix0:child>
+                        1
+                    </prefix0:child>
+                    <prefix1:child>
+                        2
+                    </prefix1:child>
+                </prefix0:root>""";
+
+        Assertions.assertEquals(outData, Xml.toXML(inData));
     }
 }
