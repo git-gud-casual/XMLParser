@@ -1,7 +1,7 @@
 package com.sps.speedtest;
 
 public abstract class SpeedTest {
-    private String testName;
+    private final String testName;
     public SpeedTest(String testName) {
         this.testName = testName;
     }
