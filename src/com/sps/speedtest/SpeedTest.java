@@ -1,7 +1,5 @@
 package com.sps.speedtest;
 
-import java.nio.file.Path;
-
 public abstract class SpeedTest {
     private String testName;
     public SpeedTest(String testName) {
@@ -9,37 +7,47 @@ public abstract class SpeedTest {
     }
 
     private void testDeserialization() {
-        long startTime1, endTime1, startTime2, endTime2;
-        startTime1 = System.nanoTime();
+        long startTime, myTime, jaxbTime;
+        startTime = System.nanoTime();
         myLibDeserializationTest();
-        endTime1 = System.nanoTime();
-        startTime2 = System.nanoTime();
+        myTime = System.nanoTime() - startTime;
+        startTime = System.nanoTime();
         anotherLibDeserializationTest();
-        endTime2 = System.nanoTime();
+        jaxbTime = System.nanoTime() - startTime;
 
         System.out.printf("    My Lib Deserialization Time: %.2fms | " +
-                        "Jaxb Deserialization Time: %.2fms. " +
-                        "Result: My Lib %.2f times faster in deserialization;\n",
-                ((float) endTime1 - startTime1) / 1_000_000,
-                ((float) endTime2 - startTime2) / 1_000_000,
-                ((float) endTime2 - startTime2) / (endTime1 - startTime1));
+                        "Jaxb Deserialization Time: %.2fms. Result: ",
+                ((float) myTime) / 1_000_000,
+                ((float) jaxbTime) / 1_000_000);
+        if (jaxbTime >= myTime) {
+            System.out.printf("My Lib %.2f times faster in deserialization;\n",
+                    ((float) jaxbTime) / myTime);
+        } else {
+            System.out.printf("My Lib %.2f times slower in deserialization;\n",
+                    ((float) myTime) / (jaxbTime));
+        }
     }
 
     private void testSerialization() {
-        long startTime1, endTime1, startTime2, endTime2;
-        startTime1 = System.nanoTime();
+        long startTime, myTime, jaxbTime;
+        startTime = System.nanoTime();
         myLibSerializationTest();
-        endTime1 = System.nanoTime();
-        startTime2 = System.nanoTime();
+        myTime = System.nanoTime() - startTime;
+        startTime = System.nanoTime();
         anotherLibSerializationTest();
-        endTime2 = System.nanoTime();
+        jaxbTime = System.nanoTime() - startTime;
 
         System.out.printf("    My Lib Serialization Time: %.2fms | " +
-                        "Jaxb Serialization Time: %.2fms. Result: " +
-                        "My Lib %.2f times faster in serialization;\n",
-                ((float) endTime1 - startTime1) / 1_000_000,
-                ((float) endTime2 - startTime2) / 1_000_000,
-                ((float) endTime2 - startTime2) / (endTime1 - startTime1));
+                        "Jaxb Serialization Time: %.2fms. Result: ",
+                ((float) myTime) / 1_000_000,
+                ((float) jaxbTime) / 1_000_000);
+        if (jaxbTime >= myTime) {
+            System.out.printf("My Lib %.2f times faster in serialization;\n",
+                    ((float) jaxbTime) / myTime);
+        } else {
+            System.out.printf("My Lib %.2f times slower in serialization;\n",
+                    ((float) myTime) / (jaxbTime));
+        }
     }
 
     public void test() {

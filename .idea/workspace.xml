@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="786b9761-3d71-412b-80c0-a99febc96916" name="Changes" comment="Final">
+    <list default="true" id="786b9761-3d71-412b-80c0-a99febc96916" name="Changes" comment="Fixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/speedtest/JaxbCatalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/speedtest/JaxbCatalog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/speedtest/JaxbPurchaseOrders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/speedtest/JaxbPurchaseOrders.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/speedtest/package-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/speedtest/SpeedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/speedtest/SpeedTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +67,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="com.sps.speedtest.Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sps.speedtest.Main" />
+      <module name="XMLParser" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sps.speedtest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="com.sps.speedtest.Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.sps.speedtest.Main" />
       <module name="XMLParser" />
@@ -121,27 +132,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="tests.com.sps.xml in XMLParser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="XMLParser" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.com.sps.xml.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests.com.sps.xml" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.com.sps.speedtest.Main" />
-        <item itemvalue="JUnit.tests.com.sps.xml in XMLParser" />
         <item itemvalue="Application.com.sps.speedtest.Main (4)" />
         <item itemvalue="Application.com.sps.speedtest.Main (3)" />
         <item itemvalue="Application.com.sps.speedtest.Main (2)" />
+        <item itemvalue="Application.com.sps.speedtest.Main (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -239,7 +236,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705583312377</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Fixed">
+      <option name="closed" value="true" />
+      <created>1705583706419</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1705583706419</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -254,6 +259,7 @@
     <MESSAGE value="Added test for Deserializer" />
     <MESSAGE value="Added defaultNamespace" />
     <MESSAGE value="Final" />
-    <option name="LAST_COMMIT_MESSAGE" value="Final" />
+    <MESSAGE value="Fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed" />
   </component>
 </project>
