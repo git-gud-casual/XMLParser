@@ -7,7 +7,7 @@ import com.sps.xml.annotation.XmlValue;
 import java.lang.reflect.Field;
 
 public final class ObjectNavigator {
-    public interface Visitor<T> {
+    protected interface Visitor<T> {
         void start(T obj);
 
         void visitAttribute(Field attribute) throws XmlSerializationException;

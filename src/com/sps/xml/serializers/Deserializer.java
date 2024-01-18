@@ -12,9 +12,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
-public final class Deserialization {
+public final class Deserializer {
     private static class Visitor<T> implements ObjectNavigator.Visitor<T> {
         private T object;
         private final XmlNode currNode;
@@ -155,7 +154,7 @@ public final class Deserialization {
                         childNamespace.equals(node.getNamespace(node.getPrefix())));
     }
 
-    public static <T> T deserialization(XmlTree tree, Class<T> clazz) throws XmlSerializationException {
+    public static <T> T deserialize(XmlTree tree, Class<T> clazz) throws XmlSerializationException {
         try {
             if (tree.getRoot() == null || !annotationIsNode(clazz.getAnnotation(XmlElement.class), tree.getRoot())) {
                 return null;
