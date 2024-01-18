@@ -7,11 +7,11 @@ class JaxbItem {
     @XmlAttribute(name = "PartNumber")
     String partNumber;
 
-    @XmlElement(name = "ProductName")
+    @XmlElement(name = "ProductName", namespace = "www.contoso.com")
     String name;
-    @XmlElement(name = "Quantity")
+    @XmlElement(name = "Quantity", namespace = "www.contoso.com")
     Integer quantity;
-    @XmlElement(name = "USPrice")
+    @XmlElement(name = "USPrice", namespace = "www.contoso.com")
     Float price;
 }
 
@@ -19,17 +19,17 @@ class JaxbAddress {
     @XmlAttribute(name = "Type")
     String deliveryType;
 
-    @XmlElement(name = "Name")
+    @XmlElement(name = "Name", namespace = "www.contoso.com")
     String name;
-    @XmlElement(name = "Street")
+    @XmlElement(name = "Street", namespace = "www.contoso.com")
     String street;
-    @XmlElement(name = "City")
+    @XmlElement(name = "City", namespace = "www.contoso.com")
     String city;
-    @XmlElement(name = "State")
+    @XmlElement(name = "State", namespace = "www.contoso.com")
     String state;
-    @XmlElement(name = "Country")
+    @XmlElement(name = "Country", namespace = "www.contoso.com")
     String country;
-    @XmlElement(name = "Zip")
+    @XmlElement(name = "Zip", namespace = "www.contoso.com")
     Integer zip;
 }
 
@@ -38,13 +38,13 @@ class JaxbPurchaseOrder {
     Integer orderNumber;
     @XmlAttribute(name = "OrderDate")
     String date;
-    @XmlElement(name = "Address")
+    @XmlElement(name = "Address", namespace = "www.contoso.com")
     JaxbAddress[] addresses;
-    @XmlElement(name = "DeliveryNotes")
+    @XmlElement(name = "DeliveryNotes", namespace = "www.contoso.com")
     String note;
 
-    @XmlElementWrapper(name = "Items")
-    @XmlElement(name = "Item")
+    @XmlElementWrapper(name = "Items", namespace = "www.contoso.com")
+    @XmlElement(name = "Item", namespace = "www.contoso.com")
     JaxbItem[] items;
 }
 
@@ -92,7 +92,7 @@ class JaxbOrder1 {
 
 @XmlRootElement(name = "PurchaseOrders", namespace = "www.contoso.com")
 public class JaxbPurchaseOrders {
-    @XmlElement(name = "PurchaseOrder")
+    @XmlElement(name = "PurchaseOrder", namespace = "www.contoso.com")
     JaxbPurchaseOrder[] purchaseOrders;
 
     @XmlElement(name = "PurchaseOrder", namespace = "http://www.adventure-works.com")

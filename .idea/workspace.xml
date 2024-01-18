@@ -4,26 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="786b9761-3d71-412b-80c0-a99febc96916" name="Changes" comment="Added defaultNamespace">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/glassfish_jaxb_runtime.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/sps/speedtest/JaxbCatalog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/sps/speedtest/JaxbPurchaseOrders.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/sps/speedtest/MyLibCatalog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/sps/speedtest/MyPurchaseOrders.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/sps/speedtest/SpeedTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/sps/speedtest/package-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/sps/xml/serializers/SerializationUtils.java" afterDir="false" />
+    <list default="true" id="786b9761-3d71-412b-80c0-a99febc96916" name="Changes" comment="Final">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/XMLParser.iml" beforeDir="false" afterPath="$PROJECT_DIR$/XMLParser.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/speedtest/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/speedtest/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/speedtest/resources/books.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/books.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/speedtest/resources/consolidated_purchase_orders.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/orders.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/Xml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/Xml.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlLexer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlTreeBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlTreeBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/serializers/Deserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/serializers/Deserializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/serializers/Serializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/serializers/Serializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/tree/XmlNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/tree/XmlNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/speedtest/JaxbCatalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/speedtest/JaxbCatalog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/speedtest/JaxbPurchaseOrders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/speedtest/JaxbPurchaseOrders.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/speedtest/package-info.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,23 +61,10 @@
       <recent name="tests.com.sps.xml.serializers" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.tests.com.sps.xml in XMLParser">
+  <component name="RunManager" selected="Application.com.sps.speedtest.Main">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.sps.xml.Main" />
       <module name="XMLParser" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="com.sps.speedtest.Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.sps.speedtest.Main" />
-      <module name="XMLParser" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.sps.speedtest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -165,11 +137,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.com.sps.speedtest.Main" />
         <item itemvalue="JUnit.tests.com.sps.xml in XMLParser" />
         <item itemvalue="Application.com.sps.speedtest.Main (4)" />
         <item itemvalue="Application.com.sps.speedtest.Main (3)" />
         <item itemvalue="Application.com.sps.speedtest.Main (2)" />
-        <item itemvalue="Application.com.sps.speedtest.Main (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -259,7 +231,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705568027706</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Final">
+      <option name="closed" value="true" />
+      <created>1705583312377</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1705583312377</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -273,6 +253,7 @@
     <MESSAGE value="Serializer handles namespaces + tests" />
     <MESSAGE value="Added test for Deserializer" />
     <MESSAGE value="Added defaultNamespace" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added defaultNamespace" />
+    <MESSAGE value="Final" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final" />
   </component>
 </project>
