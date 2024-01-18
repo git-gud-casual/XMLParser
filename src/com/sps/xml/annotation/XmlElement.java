@@ -10,4 +10,5 @@ import java.lang.annotation.RetentionPolicy;
 @Retention(value = RetentionPolicy.RUNTIME)
 public @interface XmlElement {
     String name();
+    String namespace() default "";
 }

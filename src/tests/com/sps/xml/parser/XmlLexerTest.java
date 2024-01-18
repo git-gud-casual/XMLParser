@@ -2,7 +2,7 @@ package tests.com.sps.xml.parser;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import com.sps.xml.exception.XmlLexerException;
+import com.sps.xml.parser.XmlLexerException;
 import com.sps.xml.parser.Token;
 import com.sps.xml.parser.XmlLexer;
 import org.junit.jupiter.api.Assertions;
@@ -89,6 +89,29 @@ public final class XmlLexerTest {
                 </root>
                 """;
         Assertions.assertThrows(XmlLexerException.class, () -> test(inData, new Token[]{}));
+    }
+
+    @Test
+    void xmlLexerTest6() {
+        String inData = """
+                <root attr1=/>
+                """;
+        Assertions.assertThrows(XmlLexerException.class, () -> test(inData, new Token[]{}));
+    }
+
+    @Test
+    void xmlLexerTest7() throws XmlLexerException {
+        String inData = """
+                <root attr1=""/>
+                """;
+        Token[] outputData = {
+                new Token(Token.TAG_BEGIN, "root"),
+                new Token(Token.ATTRIBUTE_NAME, "attr1"),
+                new Token(Token.EQUAL_SIGN, null),
+                new Token(Token.ATTRIBUTE_VALUE, ""),
+                new Token(Token.TAG_END_AND_CLOSE, null)
+        };
+        test(inData, outputData);
     }
 
     static void test(String inputData, Token[] outputData) throws XmlLexerException {

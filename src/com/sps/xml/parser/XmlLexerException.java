@@ -1,4 +1,4 @@
-package com.sps.xml.exception;
+package com.sps.xml.parser;
 
 public class XmlLexerException extends Exception {
     public XmlLexerException(String message) {

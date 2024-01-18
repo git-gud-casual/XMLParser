@@ -14,7 +14,7 @@ public record Token(int tokenType, String value) {
             PROLOG_BEGIN = 1 << 11,
             PROLOG_END = 1 << 12;
 
-    private static String tokenTypeToStr(int tokenType) {
+    public String tokenTypeToStr() {
         return switch (tokenType) {
             case TAG_BEGIN -> "TAG_BEGIN";
             case TAG_END -> "TAG_END";
@@ -32,6 +32,6 @@ public record Token(int tokenType, String value) {
     }
 
     public String toString() {
-        return String.format("[%s: %s]", tokenTypeToStr(tokenType), value);
+        return String.format("[%s: %s]", tokenTypeToStr(), value);
     }
 }

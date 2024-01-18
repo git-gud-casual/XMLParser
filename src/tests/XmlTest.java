@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import com.sps.xml.annotation.*;
 import com.sps.xml.exception.*;
 import com.sps.xml.Xml;
+import com.sps.xml.parser.XmlLexerException;
+import com.sps.xml.parser.XmlParserException;
 import org.junit.jupiter.api.Test;
 
 class XmlTest {
@@ -45,7 +47,7 @@ class XmlTest {
     }
 
     @Test
-    void testDeserialization() throws XmlParseException, XmlSerializationException {
+    void testDeserialization() throws XmlParserException, XmlSerializationException, XmlLexerException {
         Root root = Xml.fromXML("<root attr1=\"test attr1\"/>", Root.class);
         assertEquals("test attr1", root.attr1);
         assertNull(root.child);
@@ -54,7 +56,7 @@ class XmlTest {
     }
 
     @Test
-    void testDeserializationAndSerialization() throws XmlParseException, XmlSerializationException {
+    void testDeserializationAndSerialization() throws XmlParserException, XmlSerializationException, XmlLexerException {
         Root root = Xml.fromXML("""
                                         <root><child>0</child>
                                         <child>1</child>
@@ -76,7 +78,7 @@ class XmlTest {
     }
 
     @Test
-    void testSerializationAndDeserialization() throws XmlSerializationException, XmlParseException {
+    void testSerializationAndDeserialization() throws XmlSerializationException, XmlParserException, XmlLexerException {
         Root root = new Root();
         root.attr1 = "this is attribute";
         root.child = new Root.Child();
@@ -103,7 +105,7 @@ class XmlTest {
 
     @Test
     void testParseException() {
-        assertThrows(XmlParseException.class, () -> Xml.fromXML("<root attr1=\"attr\">", Root.class));
+        assertThrows(XmlParserException.class, () -> Xml.fromXML("<root attr1=\"attr\">", Root.class));
         System.out.println("Passed test 4");
     }
 

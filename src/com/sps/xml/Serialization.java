@@ -3,18 +3,20 @@ package com.sps.xml;
 import com.sps.xml.annotation.XmlAttribute;
 import com.sps.xml.annotation.XmlElement;
 import com.sps.xml.exception.XmlSerializationException;
+import com.sps.xml.tree.XmlNode;
+import com.sps.xml.tree.XmlTree;
 
 import java.lang.reflect.Field;
 
 final class Serialization {
     private static class Visitor<T> implements ObjectNavigator.Visitor<T> {
         private T object;
-        private XmlTree.XmlNode node;
+        private XmlNode node;
 
         @Override
         public void start(T obj) {
             object = obj;
-            node = new XmlTree.XmlNode();
+            node = new XmlNode();
         }
 
         @Override
@@ -62,7 +64,7 @@ final class Serialization {
             } catch (IllegalAccessException ignored) {}
         }
 
-        private XmlTree.XmlNode getChildNode(Object childObject, String childName) throws XmlSerializationException {
+        private XmlNode getChildNode(Object childObject, String childName) throws XmlSerializationException {
             Visitor<Object> childVisitor = new Visitor<>();
             ObjectNavigator.visitFields(childObject, childVisitor);
             childVisitor.node.setName(childName);
@@ -76,7 +78,7 @@ final class Serialization {
         return tree.toString();
     }
 
-    private static <T> XmlTree.XmlNode objToNode(T object) throws XmlSerializationException {
+    private static <T> XmlNode objToNode(T object) throws XmlSerializationException {
         try {
             Visitor<T> visitor = new Visitor<>();
             ObjectNavigator.visitFields(object, visitor);

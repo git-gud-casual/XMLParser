@@ -1,7 +1,5 @@
 package com.sps.xml.parser;
 
-import com.sps.xml.exception.XmlLexerException;
-
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

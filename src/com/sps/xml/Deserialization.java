@@ -3,6 +3,8 @@ package com.sps.xml;
 import com.sps.xml.annotation.XmlAttribute;
 import com.sps.xml.annotation.XmlElement;
 import com.sps.xml.exception.XmlSerializationException;
+import com.sps.xml.tree.XmlNode;
+import com.sps.xml.tree.XmlTree;
 
 import java.lang.reflect.Array;
 import java.lang.reflect.Constructor;
@@ -15,10 +17,10 @@ import java.util.List;
 final class Deserialization {
     private static class Visitor<T> implements ObjectNavigator.Visitor<T> {
         private T object;
-        private final XmlTree.XmlNode currNode;
-        private final List<XmlTree.XmlNode> nodeChildren;
+        private final XmlNode currNode;
+        private final List<XmlNode> nodeChildren;
 
-        public Visitor(XmlTree.XmlNode node) {
+        public Visitor(XmlNode node) {
             currNode = node;
             nodeChildren = currNode.getChildren();
         }
@@ -57,9 +59,9 @@ final class Deserialization {
 
                 if (fieldClazz.isArray()) {
                     ArrayList<Object> objects = new ArrayList<>();
-                    Iterator<XmlTree.XmlNode> iterator = nodeChildren.iterator();
+                    Iterator<XmlNode> iterator = nodeChildren.iterator();
                     while (iterator.hasNext()) {
-                        XmlTree.XmlNode childNode = iterator.next();
+                        XmlNode childNode = iterator.next();
                         if (childName.equals(childNode.getName())) {
                             objects.add(getObjectFromNode(fieldClazz.getComponentType(), childNode));
                             iterator.remove();
@@ -70,9 +72,9 @@ final class Deserialization {
                                     objects.size())));
                 }
                 else {
-                    Iterator<XmlTree.XmlNode> iterator = nodeChildren.iterator();
+                    Iterator<XmlNode> iterator = nodeChildren.iterator();
                     while (iterator.hasNext()) {
-                        XmlTree.XmlNode childNode = iterator.next();
+                        XmlNode childNode = iterator.next();
                         if (childName.equals(childNode.getName())) {
                             element.set(object, getObjectFromNode(fieldClazz, childNode));
                             iterator.remove();
@@ -84,7 +86,7 @@ final class Deserialization {
             } catch (IllegalAccessException ignored) {}
         }
 
-        private <S> S getObjectFromNode(Class<S> clazz, XmlTree.XmlNode node) throws XmlSerializationException {
+        private <S> S getObjectFromNode(Class<S> clazz, XmlNode node) throws XmlSerializationException {
             Visitor<S> visitor = new Visitor<>(node);
             ObjectNavigator.visitFields(getInstanceOfClass(clazz), visitor);
             return visitor.object;

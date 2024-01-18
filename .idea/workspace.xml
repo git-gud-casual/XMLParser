@@ -4,10 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="786b9761-3d71-412b-80c0-a99febc96916" name="Changes" comment="Updated XmlLexer. Added tests for XmlLexer">
+    <list default="true" id="786b9761-3d71-412b-80c0-a99febc96916" name="Changes" comment="Lexer handles comments and prolog">
+      <change afterPath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlTreeBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/sps/xml/tree/XmlNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/com/sps/xml/parser/XmlTreeBuilderTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/Deserialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/Deserialization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/Serialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/Serialization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/Xml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/Xml.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/XmlTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/tree/XmlTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/XmlTreeBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/annotation/XmlElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/annotation/XmlElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/exception/XmlLexerException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlLexerException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/exception/XmlParseException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlParserException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/sps/xml/parser/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/parser/Token.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlLexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/XmlTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/XmlTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tests/com/sps/xml/parser/XmlLexerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/com/sps/xml/parser/XmlLexerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +62,7 @@
     &quot;last_opened_file_path&quot;: &quot;/home/arch/IdeaProjects/KGTask1&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.XmlLexerTest">
+  <component name="RunManager" selected="JUnit.XmlTreeBuilderTest">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="XMLParser" />
@@ -108,8 +120,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="XmlTreeBuilderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="XMLParser" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.com.sps.xml.parser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests.com.sps.xml.parser" />
+      <option name="MAIN_CLASS_NAME" value="tests.com.sps.xml.parser.XmlTreeBuilderTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.XmlTreeBuilderTest" />
         <item itemvalue="JUnit.XmlLexerTest" />
         <item itemvalue="Application.com.sps.Main" />
         <item itemvalue="Application.Main (1)" />
@@ -155,7 +183,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705532179192</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Lexer handles comments and prolog">
+      <option name="closed" value="true" />
+      <created>1705536319801</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1705536319801</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -163,6 +199,7 @@
     <MESSAGE value="Final Xml.java" />
     <MESSAGE value="Lambda expressions" />
     <MESSAGE value="Updated XmlLexer. Added tests for XmlLexer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated XmlLexer. Added tests for XmlLexer" />
+    <MESSAGE value="Lexer handles comments and prolog" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lexer handles comments and prolog" />
   </component>
 </project>
