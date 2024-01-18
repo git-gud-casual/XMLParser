@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="786b9761-3d71-412b-80c0-a99febc96916" name="Changes" comment="Lambda expressions">
-      <change afterPath="$PROJECT_DIR$/src/com/sps/xml/parser/Token.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlLexer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/com/sps/xml/parser/XmlLexerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="786b9761-3d71-412b-80c0-a99febc96916" name="Changes" comment="Updated XmlLexer. Added tests for XmlLexer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/tests/XmlTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/XmlTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/XmlTreeBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/XmlTreeBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/parser/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/parser/Token.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sps/xml/parser/XmlLexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/com/sps/xml/parser/XmlLexerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/com/sps/xml/parser/XmlLexerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,13 +147,22 @@
       <option name="project" value="LOCAL" />
       <updated>1696662228927</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Updated XmlLexer. Added tests for XmlLexer">
+      <option name="closed" value="true" />
+      <created>1705532179192</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1705532179192</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added XmlElement annotation" />
     <MESSAGE value="Final Xml.java" />
     <MESSAGE value="Lambda expressions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lambda expressions" />
+    <MESSAGE value="Updated XmlLexer. Added tests for XmlLexer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated XmlLexer. Added tests for XmlLexer" />
   </component>
 </project>

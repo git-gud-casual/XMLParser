@@ -1,14 +1,18 @@
 package com.sps.xml.parser;
 
 public record Token(int tokenType, String value) {
-    public static final int TAG_BEGIN = 1,
+    public static final int
+            TAG_BEGIN = 1,
             TAG_END = 1 << 2,
             TAG_CLOSE = 1 << 3,
             TAG_END_AND_CLOSE = 1 << 4,
             ATTRIBUTE_NAME = 1 << 5,
             EQUAL_SIGN = 1 << 6,
             ATTRIBUTE_VALUE = 1 << 7,
-            CONTENT = 1 << 8;
+            CONTENT = 1 << 8,
+            COMMENT = 1 << 9,
+            PROLOG_BEGIN = 1 << 11,
+            PROLOG_END = 1 << 12;
 
     private static String tokenTypeToStr(int tokenType) {
         return switch (tokenType) {
@@ -20,11 +24,14 @@ public record Token(int tokenType, String value) {
             case EQUAL_SIGN -> "EQUAL_SIGN";
             case ATTRIBUTE_VALUE -> "ATTRIBUTE_VALUE";
             case CONTENT -> "CONTENT";
+            case COMMENT -> "COMMENT";
+            case PROLOG_BEGIN -> "PROLOG_BEGIN";
+            case PROLOG_END -> "PROLOG_END";
             default -> "NOT_DEFINED_TOKEN";
         };
     }
 
     public String toString() {
-        return String.format("%s: %s", tokenTypeToStr(tokenType), value);
+        return String.format("[%s: %s]", tokenTypeToStr(tokenType), value);
     }
 }
